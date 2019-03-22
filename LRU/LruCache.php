@@ -51,7 +51,6 @@ class LruCache
         if ($this->capacity <= 0) {
             return false;
         }
-
         if (isset($this->hashmap[$key])) {
             $node = $this->hashmap[$key];
             $node->data = $data;
@@ -62,7 +61,6 @@ class LruCache
             $this->hashmap[$key] = $node;
             $this->attach($node);
         }
-
         if (count($this->hashmap) == $this->capacity) {
             $this->gc();
         }
