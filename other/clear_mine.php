@@ -106,5 +106,8 @@ class ClearMine
     }
 }
 
-$clearMine = new ClearMine(5, 5, 5);
+$width = mt_rand(1, 10);
+$height = mt_rand(1, 10);
+$mines = mt_rand(1, floor($width * $height / 2));
+$clearMine = new ClearMine($width, $height, $mines);
 $clearMine->run();
